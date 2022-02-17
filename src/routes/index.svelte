@@ -11,4 +11,6 @@
 <p>waiting</p>
 {:then output}
 {output.success}
+{:catch error}
+<p>the error is {error}</p>
 {/await}
