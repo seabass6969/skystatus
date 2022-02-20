@@ -1,3 +1,5 @@
+<style>
+</style>
 <script>
     import json from './bazaar.json'
 async function getBazaar(){
@@ -5,14 +7,13 @@ async function getBazaar(){
         let output = await response.json();
         return output;
     }
-    console.log(json.products[2])
     let out = getBazaar();
     let itemname = ""
     let realproccessname = ""
+
     $: {
         done = false
-        realproccessname = itemname.toUpperCase().replace(" ","_");
-        console.log(realproccessname)
+        realproccessname = itemname.toUpperCase().replaceAll(" ","_");
         for (let i=0; i < json.products.length; i++){
             if(realproccessname == json.products[i]){done = true}
         }
@@ -22,11 +23,13 @@ async function getBazaar(){
 {#await out}
 <p>waiting</p>
 {:then output}
-<input type="text" bind:value={itemname}>
+<input type="text" bind:value={itemname} class="maincolor">
 {#if output.success}
 {#if done == true}
-<p>sell price is: {output["products"][realproccessname]["quick_status"]["sellPrice"]}</p>
-<p>buy price is: {output["products"][realproccessname]["quick_status"]["buyPrice"]}</p>
+<p class="subtext maincolor">sell price is: {output["products"][realproccessname]["quick_status"]["sellPrice"]}</p>
+<p class="subtext maincolor">sell volume is: {output["products"][realproccessname]["quick_status"]["sellVolume"]}</p>
+<p class="subtext maincolor">buy price is: {output["products"][realproccessname]["quick_status"]["buyPrice"]}</p>
+<p class="subtext maincolor">buy volume is: {output["products"][realproccessname]["quick_status"]["buyVolume"]}</p>
 {/if}
 {:else}
 <h1>The code must be fuck up</h1>

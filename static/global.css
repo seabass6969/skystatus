@@ -16,3 +16,28 @@ color: #FE5F55;
 .secondarycolor{
 color: #DDD92A
 }
+    input {
+        border-style: solid;
+        border-color: powderblue;
+        width: 50vw;
+        height: 5vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 6vw
+    }
+.subtext {
+    font-size: 5vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+@media (max-width: 600px){
+    input {
+        width: 70vw;
+        height: 10vw;
+        font-size: 8vw
+    }
+    .subtext {
+        font-size: 10vw;
+    }
+}
