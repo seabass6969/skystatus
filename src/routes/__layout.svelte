@@ -10,6 +10,8 @@
     <a href="/profiles">profiles(not done)</a>
 -->
 </div>
+<br>
+
 </header>
 <main>
   <slot />
