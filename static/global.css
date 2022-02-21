@@ -11,21 +11,29 @@ background-color: #1D3461;
 font-family: 'Ubuntu Mono', monospace;
 }
 .maincolor{
-color: #FE5F55;
+color: #B40f00;
 }
 .secondarycolor{
 color: #DDD92A
 }
-    input {
-        border-style: solid;
-        border-color: powderblue;
-        width: 50vw;
-        height: 5vw;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 6vw
-    }
+.thirdcolor{
+color: #2add41;
+}
+
+input {
+    border-style: solid;
+    border-color: #00b9ff;
+    background-color: #00b9ff;
+    width: 50vw;
+    height: 5vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+    font-size: 6vw;
+    border-radius: 15px;
+    padding: 2vw 2vw 2vw 2vw;
+}
 .subtext {
     font-size: 5vw;
     margin-top: 3vw;
@@ -41,3 +49,10 @@ color: #DDD92A
         font-size: 10vw;
     }
 }
+.hoverinput:hover{
+    animation: hoverinputed 500ms forwards;
+}
+@keyframes hoverinputed{
+    to{background-color: #61D5FF}
+}
+
