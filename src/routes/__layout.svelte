@@ -18,7 +18,7 @@
 </style>
 <header>
 <div class="header">
-    <img src="favicon.png" class="image">
+<img src="favicon.png" class="image" alt="homeimage" href="/">
     <a href="/bazaar" class="secondarycolor">bazaar(in dev)</a>
 <!--
     <a href="/profiles">profiles(not done)</a>

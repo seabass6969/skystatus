@@ -1,3 +1,15 @@
+<style>
+    .back-bg{
+    background-image: url('background/mainscreen.png');
+    filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    }
+</style>
 <script>
     import json from './bazaar.json'
 async function getBazaar(){
@@ -23,16 +35,17 @@ async function getBazaar(){
 <h1 class="subtext thirdcolor">type item to search on bz:</h1>
 <input type="text" bind:value={itemname} class="maincolor hoverinput">
 {#if output.success}
-<h5>last update is: {Date(output["lastUpdated"])}</h5>
 {#if done == true}
 <p class="subtext maincolor">sell price is: {output["products"][realproccessname]["quick_status"]["sellPrice"].toFixed(2)}</p>
 <p class="subtext maincolor">sell volume is: {output["products"][realproccessname]["quick_status"]["sellVolume"].toFixed(2)}</p>
 <p class="subtext maincolor">buy price is: {output["products"][realproccessname]["quick_status"]["buyPrice"].toFixed(2)}</p>
 <p class="subtext maincolor">buy volume is: {output["products"][realproccessname]["quick_status"]["buyVolume"].toFixed(2)}</p>
 {/if}
+    <p class="smalltext">last update is: {Date(output["lastUpdated"])}</p>
 {:else}
 <h1>The code must be fuck up</h1>
 {/if}
 {:catch error}
 <p>the error is {error}</p>
 {/await}
+<div class="back-bg"></div>
