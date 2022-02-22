@@ -1,6 +1,6 @@
 <style>
     .back-bg{
-    background-image: url('background/mainscreen.png');
+background-image: url('/background/mainscreen.png');
     filter: blur(10px);
     position: fixed;
     width: 100%;
