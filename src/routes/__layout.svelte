@@ -1,11 +1,6 @@
 <style>
     .header{
-        font-size: 5vw;
-    }
-    @media (max-width: 600px){
-    .header{
-        font-size: 9vw;
-    }
+        font-size: 3vw;
     }
     .image{
         width: 8vw;
@@ -15,11 +10,26 @@
         margin-bottom: auto;
         vertical-align: middle
     }
+
+    @media (max-width: 600px){
+        .header{
+        font-size: 5vw;
+        }
+        .image{
+        width: 10vw;
+        height: 10vw;
+        }
+    }
+    a {
+        padding-left: 1vw;
+        padding-right:1vw;
+    }
 </style>
 <header>
 <div class="header">
-<img src="favicon.png" class="image" alt="homeimage" href="/">
-    <a href="/bazaar" class="secondarycolor">bazaar(in dev)</a>
+    <a href="/"><img src="favicon.png" class="image" alt="homeimage" ></a>
+    <a href="/bazaar" class="">bazaar</a>
+    <a href="/mayor" class="">mayor</a>
 <!--
     <a href="/profiles">profiles(not done)</a>
 -->

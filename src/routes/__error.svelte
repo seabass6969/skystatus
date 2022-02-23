@@ -1,6 +1,6 @@
 <style>
     .back-bg{
-    background-image: url('/background/main.png');
+    background-image: url('/background/errorscreen.png');
     filter: blur(2px);
     position: fixed;
     width: 100%;
@@ -10,5 +10,5 @@
     z-index: -1;
     }
 </style>
-<h1 class="secondarycolor">This is the index page</h1>
+<h1 class="maincolor">error has occur</h1>
 <div class="back-bg"></div>
