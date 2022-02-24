@@ -10,8 +10,11 @@
     z-index: -1;
     }
 </style>
+<svelte:head>
+<title>bazaar</title>
+</svelte:head>
 <script>
-    import json from './bazaar.json'
+    import json from '$lib/bazaar.json'
 async function getBazaar(){
         let response = await fetch("https://api.hypixel.net/skyblock/bazaar");
         let output = await response.json();

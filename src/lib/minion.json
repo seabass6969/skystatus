@@ -1,0 +1,19 @@
+{
+    "minion_storage": [
+        {"lv":1,"time_action":15,"storage":128},
+        {"lv":2},
+        {"lv":3},
+        {"lv":4},
+        {"lv":5},
+        {"lv":6},
+        {"lv":7},
+        {"lv":8},
+        {"lv":9},
+        {"lv":10},
+        {"lv":11},
+        {"lv":12}
+        ],
+    "minion": [
+        {"name": "Wheat","id":"WHEAT_GENERATOR","resources":[{"name":"Wheat","chance": 1},{"name":"Seeds","chance": 1.5}]}
+    ]
+}
