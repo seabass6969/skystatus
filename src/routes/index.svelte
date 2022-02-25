@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style>
     .back-bg{
     background-image: url('/background/main.png');
@@ -30,3 +31,6 @@
 <h1 class="secondarycolor subtext">The all in one skyblock website</h1>
 <h1 class="subtext textspecial">for you</h1>
 <div class="back-bg"></div>
+=======
+<h1>This is the index page</h1>
+>>>>>>> parent of 491efed (renamed all background pic, added mayor page)

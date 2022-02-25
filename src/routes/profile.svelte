@@ -1,15 +1,3 @@
-<style>
-    .back-bg{
-    background-image: url('/background/profile.png');
-    filter: blur(4px);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    }
-</style>
 <script>
     const SKYKEY = import.meta.env.VITE_KEY;
     async function getSKY(){
@@ -28,4 +16,3 @@ Its {output.success}
 {:catch error}
 <p>the error is {error}</p>
 {/await}
-<div class="back-bg"></div>

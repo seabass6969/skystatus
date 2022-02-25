@@ -1,7 +1,7 @@
 <style>
     .back-bg{
-    background-image: url('/background/bazaar.png');
-    filter: blur(2px);
+background-image: url('/background/mainscreen.png');
+    filter: blur(10px);
     position: fixed;
     width: 100%;
     height: 100%;
@@ -44,7 +44,7 @@ async function getBazaar(){
 <p class="subtext maincolor">buy price is: {output["products"][realproccessname]["quick_status"]["buyPrice"].toFixed(2)}</p>
 <p class="subtext maincolor">buy volume is: {output["products"][realproccessname]["quick_status"]["buyVolume"].toFixed(2)}</p>
 {/if}
-    <p class="smalltext maincolor">last update is: {Date(output["lastUpdated"])}</p>
+    <p class="smalltext">last update is: {Date(output["lastUpdated"])}</p>
 {:else}
 <h1>The code must be fuck up</h1>
 {/if}
