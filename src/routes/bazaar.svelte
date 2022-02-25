@@ -14,7 +14,7 @@
 <title>bazaar</title>
 </svelte:head>
 <script>
-    import json from '$lib/bazaar.json'
+    import json from './bazaar.json'
 async function getBazaar(){
         let response = await fetch("https://api.hypixel.net/skyblock/bazaar");
         let output = await response.json();
