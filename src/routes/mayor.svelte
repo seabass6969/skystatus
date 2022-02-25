@@ -1,6 +1,6 @@
 <style>
     .back-bg{
-    background-image: url('/background/mayor_opt.png');
+    background-image: url('/background/mayor_opt.webp');
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,6 +13,11 @@
     z-index: -1;
     }
 </style>
+
+<svelte:head>
+<title>mayor</title>
+</svelte:head>
+
 <script>
     import MinecraftCode from './../component/minecraftCode.svelte';
     async function getMayor(){

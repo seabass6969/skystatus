@@ -1,6 +1,6 @@
 <style>
     .back-bg{
-    background-image: url('/background/bazaar_opt.png');
+    background-image: url('/background/bazaar_opt.webp');
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(2px);
@@ -12,6 +12,11 @@
     z-index: -1;
     }
 </style>
+
+<svelte:head>
+<title>bazaar</title>
+</svelte:head>
+
 <script>
     import json from './bazaar.json'
 async function getBazaar(){

@@ -1,6 +1,9 @@
 <style>
     .back-bg{
-    background-image: url('/background/errorscreen_opt.png');
+    background-image: url('/background/errorscreen_opt.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
     filter: blur(2px);
     position: fixed;
     width: 100%;
