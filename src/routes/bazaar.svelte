@@ -1,6 +1,8 @@
 <style>
     .back-bg{
-    background-image: url('/background/bazaar.png');
+    background-image: url('/background/bazaar_opt.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     filter: blur(2px);
     position: fixed;
     width: 100%;

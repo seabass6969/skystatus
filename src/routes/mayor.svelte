@@ -1,6 +1,9 @@
 <style>
     .back-bg{
-    background-image: url('/background/mayor.png');
+    background-image: url('/background/mayor_opt.png');
+
+    background-repeat: no-repeat;
+    background-size: cover;
     filter: blur(5px);
     position: fixed;
     width: 100%;

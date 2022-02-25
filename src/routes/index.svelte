@@ -1,6 +1,9 @@
 <style>
     .back-bg{
-    background-image: url('/background/main.png');
+    background-image: url('/background/main_opt.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
     filter: blur(2px);
     position: fixed;
     width: 100%;
@@ -13,8 +16,8 @@
         background: linear-gradient(
             to right,
             #bf00c1 0%,
-            #FE5F55 30%,
-            #DDD92A 50%
+            #FE5F55 50%,
+            #DDD92A 90%
         );
         background-clip: text;
         -webkit-background-clip: text;

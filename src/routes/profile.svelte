@@ -1,6 +1,9 @@
 <style>
     .back-bg{
-    background-image: url('/background/profile.png');
+    background-image: url('/background/profile_opt.png');
+
+    background-repeat: no-repeat;
+    background-size: cover;
     filter: blur(4px);
     position: fixed;
     width: 100%;
