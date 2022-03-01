@@ -17,6 +17,10 @@
         text-decoration-color: tan;
     }
 </style>
+
+<svelte:head>
+<title>News</title>
+</svelte:head>
 <script>
     async function getNews(){
         let response = await fetch("https://sky-api-proxy.cephas8080.workers.dev/api/News");
@@ -33,5 +37,7 @@
 <p class="secondarycolor smalltext">Date it added:{items["text"]}</p>
 <a class="secondarycolor smalltext" href={items["link"]}>forum post link</a>
 {/each}
+{:catch error}
+<p>error is {error}</p>
 {/await}
 <div class="back-bg"></div>
