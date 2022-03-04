@@ -28,9 +28,10 @@
 <header>
 <div class="header">
     <a href="/"><img src="favicon.png" class="image" alt="homeimage" ></a>
-    <a href="/bazaar" class="">bazaar</a>
+    <a href="/bazaar" class="">bz</a>
     <a href="/mayor" class="">mayor</a>
     <a href="/news" class="">news</a>
+    <a href="/locationtracker" class="">place</a>
 <!--
     <a href="/profiles">profiles(not done)</a>
 -->

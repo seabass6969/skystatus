@@ -23,7 +23,14 @@ color: #DDD92A
 .thirdcolor{
 color: #2add41;
 }
-
+button {
+    border-style: solid;
+    border-color: #00b9ff;
+    background-color: #00b9ff;
+    font-size: 6vw;
+    border-radius: 15px;
+    display: block;
+}
 input {
     border-style: solid;
     border-color: #00b9ff;
@@ -31,17 +38,16 @@ input {
     width: 50vw;
     height: 5vw;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1vw;
     font-size: 6vw;
     border-radius: 15px;
-    padding: 2vw 2vw 2vw 2vw;
 }
 .subtext {
     font-size: 5vw;
     margin-top: 3vw;
     margin-bottom: 3vw;
+}
+.subsubtext{
+    font-size: 3vw;
 }
 .smalltext {
     font-size: 2vw;
@@ -52,11 +58,17 @@ input {
         height: 10vw;
         font-size: 8vw
     }
+    button{
+        font-size: 8vw
+    }
     .subtext {
         font-size: 10vw;
     }
     .smalltext {
         font-size: 3vw;
+    }
+    .subsubtext{
+        font-size: 5vw;
     }
 }
 @media (min-width: 1000px){
@@ -65,11 +77,17 @@ input {
         height: 5vw;
         font-size: 7vw
     }
+    button {
+        font-size: 7vw
+    }
     .subtext {
         font-size: 4vw;
     }
     .smalltext {
         font-size: 2vw;
+    }
+    .subsubtext{
+        font-size: 3vw;
     }
 }
 .hoverinput:hover{

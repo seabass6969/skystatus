@@ -23,7 +23,7 @@
 </svelte:head>
 <script>
     async function getNews(){
-        let response = await fetch("https://sky-api-proxy.cephas8080.workers.dev/api/News");
+        let response = await fetch("https://skyproxyjs.cephas8080.workers.dev/api/News");
         let output = await response.json();
         return output;
     }

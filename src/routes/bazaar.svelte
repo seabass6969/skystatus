@@ -11,6 +11,12 @@
     left: 0;
     z-index: -1;
     }
+    .textbox{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+    padding: 2vw 2vw 2vw 2vw;
+    }
 </style>
 
 <svelte:head>
@@ -40,7 +46,7 @@ async function getBazaar(){
 <p>waiting</p>
 {:then output}
 <h1 class="subtext thirdcolor">type item to search on bz:</h1>
-<input type="text" bind:value={itemname} class="maincolor hoverinput">
+<input type="text" bind:value={itemname} class="maincolor hoverinput textbox">
 {#if output.success}
 {#if done == true}
 <p class="subtext maincolor">sell price is: {output["products"][realproccessname]["quick_status"]["sellPrice"].toFixed(2)}</p>
