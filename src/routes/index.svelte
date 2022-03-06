@@ -28,5 +28,5 @@
 <svelte:head>
 <title>sky home</title>
 </svelte:head>
-<h1 class="secondarycolor textspecial">The all in one skyblock website for you</h1>
+<h1 class="secondarycolor textspecial">The all-in-one skyblock website for you</h1>
 <div class="back-bg"></div>

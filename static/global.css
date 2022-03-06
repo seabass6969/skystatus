@@ -38,8 +38,20 @@ input {
     width: 50vw;
     height: 5vw;
     display: block;
-    font-size: 6vw;
+    font-size: 5vw;
     border-radius: 15px;
+    padding-left: 4vw
+}
+select {
+    border-style: solid;
+    border-color: #00b9ff;
+    background-color: #00b9ff;
+    font-size: 4vw;
+    border-radius: 15px;
+    display: block;
+    width: 30vw;
+    height: 5vw;
+    padding-left: 2vw
 }
 .subtext {
     font-size: 5vw;
@@ -60,6 +72,9 @@ input {
     }
     button{
         font-size: 8vw
+    }
+    select{
+        font-size: 3vw
     }
     .subtext {
         font-size: 10vw;

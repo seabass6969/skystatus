@@ -13,7 +13,7 @@
 
     @media (max-width: 600px){
         .header{
-        font-size: 5vw;
+        font-size: 3.8vw;
         }
         .image{
         width: 10vw;
@@ -27,11 +27,12 @@
 </style>
 <header>
 <div class="header">
-    <a href="/"><img src="favicon.png" class="image" alt="homeimage" ></a>
+    <a href="/"><img src="/favicon.png" class="image" alt="homeimage" ></a>
     <a href="/bazaar" class="">bz</a>
     <a href="/mayor" class="">mayor</a>
     <a href="/news" class="">news</a>
-    <a href="/locationtracker" class="">place</a>
+    <a href="/locationtracker" class="">location</a>
+    <a href="/profile">profile</a>
 <!--
     <a href="/profiles">profiles(not done)</a>
 -->
@@ -42,4 +43,5 @@
 <main>
   <slot />
 </main>
-<footer></footer>
+<footer>
+</footer>

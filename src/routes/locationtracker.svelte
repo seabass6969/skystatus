@@ -25,11 +25,7 @@
     left: 0;
     z-index: -1;
     }
-    .textbox{
-    padding-left: 10px; 
-    padding-right: 10px;
-    }
-   </style>
+</style>
 
 <svelte:head>
 <title>Location Tracker</title>
@@ -64,8 +60,8 @@
     }
 </script>
 <div class="tablestyle">
-<input type="text" bind:value={playervalue} on:input={onchangevalue} on:change={clickedlocation} class="textbox">
-<button on:click={clickedlocation} class="showme subsubtext">show</button>
+<input type="text" bind:value={playervalue} on:input={onchangevalue} on:change={clickedlocation} class="textboxmaincolor hoverinput">
+<button on:click={clickedlocation} class="showme subsubtext maincolor hoverinput">show</button>
 </div>
 {#if locationdata.success !== false}
 <br>
