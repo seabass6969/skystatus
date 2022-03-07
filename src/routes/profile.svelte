@@ -73,6 +73,7 @@
 </div>
 {#if profileidfetch.success !== false}
 <br>
+<p class="subtext">select your profile:</p>
 <select bind:value={profileidfetch.selected_value} >
     {#each profileidfetch.profilelist as profilelist}
         <option value={profilelist.profile_id}>{profilelist.cute_name}</option>

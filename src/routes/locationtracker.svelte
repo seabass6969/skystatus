@@ -13,7 +13,7 @@
     }
     }
     .back-bg{
-    background-image: url('/background/main_opt.webp');
+    background-image: url('/background/location_opt.webp');
     background-repeat: no-repeat;
     background-size: cover;
 
