@@ -5,6 +5,7 @@
 ## legal stuff
 project license through the gnu license 
 font minectaft is under MIT license https://github.com/South-Paw/typeface-minecraft
+resource pack `FurfSky Reborn`
 
 
 ### How to build the package

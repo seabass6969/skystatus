@@ -74,8 +74,9 @@
         }
         console.log(output)
         profiledata = {
+        first_join: proDout.output.profile.members[proDout.uuid].first_join,
             bank_balance: reun(proDout.output.profile.banking.balance.toFixed(2)),
-            coin_purse: reun(proDout.output.profile.members[proDout.uuid].coin_purse)
+            coin_purse: reun(proDout.output.profile.members[proDout.uuid].coin_purse.toFixed(2))
         }
         skills = {
         experience_skill_alchemy: reun(proDout.output.profile.members[proDout.uuid].experience_skill_alchemy.toFixed(0)),
@@ -98,10 +99,20 @@
 {#if proDout.loading == true}
 <p>waiting</p>
 {:else}
-<p class="subsubtext">first join:</p>
+<p class="subsubtext">Last logon: {Date(profiledata.first_join)}</p>
 <p class="subsubtext">bank balance: {toformated(reun(profiledata.bank_balance))}</p>
 <p class="subsubtext">coin purse: {toformated(reun(profiledata.coin_purse))}</p>
-<p class="subsubtext maincolor">Skills: NOT GONNER COME SOOOOOOON</p>
+<p class="subsubtext maincolor">Skills:</p>
+<ProgressBar xp={skills.experience_skill_taming} text="Taming" Image="/resource/minecraft/textures/items/spawn_egg_overlay.png"/>
+<ProgressBar xp={skills.experience_skill_mining} text="Mining" Image="/resource/minecraft/textures/items/stone_pickaxe.png"/>
+<ProgressBar xp={skills.experience_skill_foraging} text="Foraging" Image="/resource/minecraft/textures/blocks/sapling_jungle.png"/>
+<ProgressBar xp={skills.experience_skill_enchanting} text="Enchanting" Image="/resource/minecraft/textures/blocks/enchanting_table_top.png"/>
+<ProgressBar xp={skills.experience_skill_carpentry} text="Carpentry" Image="/resource/minecraft/textures/blocks/crafting_table_top.png"/>
+<ProgressBar xp={skills.experience_skill_farming} text="Farming" Image="/resource/minecraft/textures/items/gold_hoe.png"/>
+<ProgressBar xp={skills.experience_skill_combat} text="Combat" Image="/resource/minecraft/textures/items/stone_sword.png"/>
+<ProgressBar xp={skills.experience_skill_fishing} text="Fishing" Image="/resource/minecraft/textures/items/fishing_rod_uncast.png"/>
+<ProgressBar xp={skills.experience_skill_alchemy} text="Alchemy" Image="/resource/minecraft/textures/items/brewing_stand.png"/>
+<ProgressBar xp={skills.experience_skill_runecrafting} text="Runecrafting" Image="/resource/minecraft/textures/items/magma_cream.png"/>
 <p class="subsubtext maincolor">Collection: NOT GONNER COME SOOOOOOON</p>
 {/if}
 <div class="back-bg"></div>
