@@ -8,7 +8,7 @@ text color2: DDD92A
 
 @font-face {
     font-family: 'Minecraft';
-    src: url('/fonts/minecraft.woff')
+    src: url('/fonts/minecraft.woff');
 }
 * {
 color: #DDD92A;
@@ -77,7 +77,7 @@ select {
         font-size: 3vw
     }
     .subtext {
-        font-size: 10vw;
+        font-size: 9vw;
     }
     .smalltext {
         font-size: 3vw;

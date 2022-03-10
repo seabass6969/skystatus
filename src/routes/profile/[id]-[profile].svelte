@@ -12,6 +12,8 @@
     left: 0;
     z-index: -1;
     }
+    .skills {
+    }
 </style>
 <script context="module">
   export async function load({params}) {
@@ -27,6 +29,7 @@
 </script>
 <script>
     import ProgressBar from './../../component/ProgressBar.svelte'
+    import CollectionUi from './../../component/CollectionUI.svelte'
     import {BigNumber} from "bignumber.js"
     import { onMount } from 'svelte'
     function reun(valable){
@@ -61,6 +64,9 @@
         experience_skill_runecrafting: undefined,
         experience_skill_taming: undefined
     }
+    let collection = {
+    }
+    let coll = undefined;
     onMount(async () => {
         proDout.loading = true
         let response = await fetch('https://skyproxyjs.cephas8080.workers.dev/api/profile/' + id + '/' + profile );
@@ -90,12 +96,21 @@
         experience_skill_runecrafting: reun(proDout.output.profile.members[proDout.uuid].experience_skill_runecrafting.toFixed(0)),
         experience_skill_taming: reun(proDout.output.profile.members[proDout.uuid].experience_skill_taming.toFixed(0))
         }
-        console.log(proDout.output.profile.members[proDout.uuid])
-        console.log(skills)
+    coll = reun(proDout.output.profile.members[proDout.uuid].collection)
+    console.log(coll)
+    collection = {
+        farming: [{name:"Wheat", string: coll.WHEAT},{name:"Carrot", string: coll.CARROT_ITEM }],
+        foraging: [{name: "Oak Wood", string: coll.LOG, tier: [0,50,100,250,500,1000,2000,5000,10000,30000], image:'/resource/minecraft/textures/blocks/log_oak.png'}]
+    }
+        // console.log(proDout.output.profile.members[proDout.uuid])
     })
-
 </script>
-<p class="subtext">{id} skyblock profile: </p>
+
+<svelte:head>
+<title>{id} profile</title>
+</svelte:head>
+
+<p class="subtext">{id} profile: </p>
 {#if proDout.loading == true}
 <p>waiting</p>
 {:else}
@@ -103,6 +118,8 @@
 <p class="subsubtext">bank balance: {toformated(reun(profiledata.bank_balance))}</p>
 <p class="subsubtext">coin purse: {toformated(reun(profiledata.coin_purse))}</p>
 <p class="subsubtext maincolor">Skills:</p>
+{#if skills.experience_skill_taming !== undefined}
+<div class="skills">
 <ProgressBar xp={skills.experience_skill_taming} text="Taming" Image="/resource/minecraft/textures/items/spawn_egg_overlay.png"/>
 <ProgressBar xp={skills.experience_skill_mining} text="Mining" Image="/resource/minecraft/textures/items/stone_pickaxe.png"/>
 <ProgressBar xp={skills.experience_skill_foraging} text="Foraging" Image="/resource/minecraft/textures/blocks/sapling_jungle.png"/>
@@ -113,6 +130,19 @@
 <ProgressBar xp={skills.experience_skill_fishing} text="Fishing" Image="/resource/minecraft/textures/items/fishing_rod_uncast.png"/>
 <ProgressBar xp={skills.experience_skill_alchemy} text="Alchemy" Image="/resource/minecraft/textures/items/brewing_stand.png"/>
 <ProgressBar xp={skills.experience_skill_runecrafting} text="Runecrafting" Image="/resource/minecraft/textures/items/magma_cream.png"/>
+</div>
+{:else}
+<p class="subsubtext">Not enabled your skills api</p>
+{/if}
 <p class="subsubtext maincolor">Collection: NOT GONNER COME SOOOOOOON</p>
+{#if coll !== undefined}
+<div class="statscotent">
+{#each collection.foraging as item}
+<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} imageurl={item.image}/>
+{/each}
+</div>
+{:else}
+<p class="subsubtext">Not enabled your skills api</p>
+{/if}
 {/if}
 <div class="back-bg"></div>
