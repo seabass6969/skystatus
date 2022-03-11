@@ -49,6 +49,7 @@
     }
     async function showprofile() {
         profileidfetch.loading = true;
+        playervalue = playervalue.replaceAll(" ", "")
         const response = await fetch('https://skyproxyjs.cephas8080.workers.dev/api/profileslist/' + playervalue)
         const output = await response.json()
         if(output.error == undefined){

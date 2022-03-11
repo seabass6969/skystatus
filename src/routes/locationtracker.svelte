@@ -60,7 +60,7 @@
     }
 </script>
 <div class="tablestyle">
-<input type="text" bind:value={playervalue} on:input={onchangevalue} on:change={clickedlocation} class="textboxmaincolor hoverinput">
+<input type="text" bind:value={playervalue} on:input={onchangevalue} on:change={clickedlocation} class="textboxmaincolor hoverinput maincolor">
 <button on:click={clickedlocation} class="showme subsubtext maincolor hoverinput">show</button>
 </div>
 {#if locationdata.success !== false}

@@ -38,9 +38,8 @@ input {
     width: 50vw;
     height: 5vw;
     display: block;
-    font-size: 5vw;
+    font-size: 4vw;
     border-radius: 15px;
-    padding-left: 4vw
 }
 select {
     border-style: solid;
@@ -64,6 +63,11 @@ select {
 .smalltext {
     font-size: 2vw;
 }
+.normalimage {
+    width:3vw;
+    height:3vw;
+    margin-right: 1vw;
+}
 @media (max-width: 600px){
     input {
         width: 70vw;
@@ -85,12 +89,17 @@ select {
     .subsubtext{
         font-size: 5vw;
     }
+    .normalimage {
+        width:6vw;
+        height:6vw;
+        margin-right: 2vw;
+    }
 }
 @media (min-width: 1000px){
     input {
         width: 45vw;
         height: 5vw;
-        font-size: 7vw
+        font-size: 4vw
     }
     button {
         font-size: 7vw

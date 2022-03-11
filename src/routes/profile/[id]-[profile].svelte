@@ -71,7 +71,7 @@
         proDout.loading = true
         let response = await fetch('https://skyproxyjs.cephas8080.workers.dev/api/profile/' + id + '/' + profile );
         let output = await response.json();
-        let res = await fetch("https://skyproxyjs.cephas8080.workers.dev/fetchuuid/" + id)
+        let res = await fetch("https://skyproxyjs.cephas8080.workers.dev/fetchuuid/" + id.replaceAll(" ",""))
         let uuidout = await res.json()        
         proDout = {
             output: output,
@@ -100,8 +100,15 @@
     console.log(coll)
     collection = {
         farming: [{name:"Wheat", string: coll.WHEAT},{name:"Carrot", string: coll.CARROT_ITEM }],
-        foraging: [{name: "Oak Wood", string: coll.LOG, tier: [0,50,100,250,500,1000,2000,5000,10000,30000], image:'/resource/minecraft/textures/blocks/log_oak.png'}]
+        foraging: [{name: "Oak Wood", string: coll.LOG, tier: [0,50,100,250,500,1000,2000,5000,10000,30000],maxtier: 30000, image:'/resource/minecraft/textures/blocks/log_oak.png'},
+            {name: "Spruce Wood", string: coll["LOG:1"], tier: [0,50,100,250,1000,2000,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/blocks/log_spruce.png'},
+            {name: "Birch Wood", string: coll["LOG:2"], tier: [0,50,100,250,1000,2000,5000,10000,25000,50000],maxtier: 50000,image: '/resource/minecraft/textures/blocks/log_birch.png'},
+            {name: "Jungle Wood", string: coll["LOG:3"], tier: [0,50,100,250,500,1000,2000,5000,10000,25000],maxtier:25000,image: '/resource/minecraft/textures/blocks/log_jungle.png'},
+            {name: "Acacia Wood", string: coll["LOG_2"], tier: [0,50,100,250,500,1000,2000,5000,10000,25000],maxtier:25000,image: '/resource/minecraft/textures/blocks/log_acacia.png'},
+            {name: "Dark Oak Wood", string: coll["LOG_2:1"], tier: [0,50, 100, 250, 1000, 2000, 5000, 10000, 15000, 25000],maxtier:25000,image: '/resource/minecraft/textures/blocks/log_big_oak.png'},
+            ]
     }
+        // 50, 100, 250, 1000, 2000, 5000, 10000, 15000, 25000
         // console.log(proDout.output.profile.members[proDout.uuid])
     })
 </script>
@@ -137,9 +144,11 @@
 <p class="subsubtext maincolor">Collection: NOT GONNER COME SOOOOOOON</p>
 {#if coll !== undefined}
 <div class="statscotent">
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/blocks/sapling_jungle.png" alt="">FORAGING:</div>
 {#each collection.foraging as item}
-<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} imageurl={item.image}/>
+<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
+<p class="smalltext">*Note: only count one members in a co-op only</p>
 </div>
 {:else}
 <p class="subsubtext">Not enabled your skills api</p>
