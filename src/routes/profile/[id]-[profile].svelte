@@ -100,13 +100,26 @@
     console.log(coll)
     collection = {
         farming: [{name:"Wheat", string: coll.WHEAT},{name:"Carrot", string: coll.CARROT_ITEM }],
-        foraging: [{name: "Oak Wood", string: coll.LOG, tier: [0,50,100,250,500,1000,2000,5000,10000,30000],maxtier: 30000, image:'/resource/minecraft/textures/blocks/log_oak.png'},
+        foraging: [
+            {name: "Oak Wood", string: coll.LOG, tier: [0,50,100,250,500,1000,2000,5000,10000,30000],maxtier: 30000, image:'/resource/minecraft/textures/blocks/log_oak.png'},
             {name: "Spruce Wood", string: coll["LOG:1"], tier: [0,50,100,250,1000,2000,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/blocks/log_spruce.png'},
             {name: "Birch Wood", string: coll["LOG:2"], tier: [0,50,100,250,1000,2000,5000,10000,25000,50000],maxtier: 50000,image: '/resource/minecraft/textures/blocks/log_birch.png'},
             {name: "Jungle Wood", string: coll["LOG:3"], tier: [0,50,100,250,500,1000,2000,5000,10000,25000],maxtier:25000,image: '/resource/minecraft/textures/blocks/log_jungle.png'},
             {name: "Acacia Wood", string: coll["LOG_2"], tier: [0,50,100,250,500,1000,2000,5000,10000,25000],maxtier:25000,image: '/resource/minecraft/textures/blocks/log_acacia.png'},
             {name: "Dark Oak Wood", string: coll["LOG_2:1"], tier: [0,50, 100, 250, 1000, 2000, 5000, 10000, 15000, 25000],maxtier:25000,image: '/resource/minecraft/textures/blocks/log_big_oak.png'},
-            ]
+        ],
+        fishing: [
+            {name: "Raw Fish", string: coll["RAW_FISH"], tier: [0, 20, 50, 100, 250, 500, 1000, 2500, 15000, 30000, 45000, 60000],maxtier:60000, image: '/resource/minecraft/textures/items/fish_cod_raw.png'},
+            {name: "Raw Salmon", string: coll["RAW_FISH:1"], tier: [0, 20, 50, 100, 250, 500, 1000, 2500, 5000, 10000],maxtier:10000, image: '/resource/minecraft/textures/items/fish_salmon_raw.png'},
+            {name: "Clownfish", string: coll["RAW_FISH:2"], tier: [0,10 ,25 , 50, 100, 200, 400, 800],maxtier:800, image: '/resource/minecraft/textures/items/fish_clownfish_raw.png'},
+            {name: "Pufferfish", string: coll["RAW_FISH:3"], tier: [0, 20, 50, 100, 150, 400, 800, 2400, 4800, 9000],maxtier:9000, image: '/resource/minecraft/textures/items/fish_pufferfish_raw.png'},
+            {name: "Prismarine Shard", string: coll["PRISMARINE_SHARD"], tier: [0,10,25, 50, 100, 200, 400],maxtier:400, image: '/resource/minecraft/textures/items/prismarine_shard.png'},
+            {name: "Prismarine Crystal", string: coll["PRISMARINE_CRYSTALS"], tier: [0,10,25, 50, 100, 200, 400, 800],maxtier:800, image: '/resource/minecraft/textures/items/prismarine_crystals.png'},
+            {name: "Clay", string: coll["CLAY_BALL"], tier: [0, 50, 100, 250, 1000, 2500],maxtier:2500, image: '/resource/minecraft/textures/items/clay_ball.png'},
+            {name: "Lily Pad", string: coll["WATER_LILY"], tier: [0, 10, 50, 100, 200, 500, 1500, 3000, 6000, 10000],maxtier:10000, image: '/resource/minecraft/textures/blocks/waterlily.png'},
+            {name: "Ink Sac", string: coll["INK_SACK"], tier: [0, 20, 40, 100, 200, 400, 800, 1500, 2500, 4000],maxtier:4000, image: '/resource/minecraft/textures/items/dye_powder_black.png'},
+            {name: "Sponge", string: coll["SPONGE"], tier: [0, 20, 40, 100, 200, 400, 800, 1500, 2500, 4000],maxtier:4000, image: '/resource/minecraft/textures/blocks/sponge.png'},
+        ]
     }
         // 50, 100, 250, 1000, 2000, 5000, 10000, 15000, 25000
         // console.log(proDout.output.profile.members[proDout.uuid])
@@ -144,10 +157,21 @@
 <p class="subsubtext maincolor">Collection: NOT GONNER COME SOOOOOOON</p>
 {#if coll !== undefined}
 <div class="statscotent">
-<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/blocks/sapling_jungle.png" alt="">FORAGING:</div>
+<!---started collection-->
+<!---foraging-->
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/blocks/sapling_jungle.png" alt="fishing logo">FORAGING:</div>
 {#each collection.foraging as item}
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
+
+<!---fishing-->
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/fish_pufferfish_raw.png" alt="Fishing logo">FISHING:</div>
+{#each collection.fishing as item}
+<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
+{/each}
+    
+<!---ended collection-->
+
 <p class="smalltext">*Note: only count one members in a co-op only</p>
 </div>
 {:else}

@@ -5,6 +5,8 @@
     border-radius: 5px;
     margin-left: 1vw;
     margin-right: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 .collection-icon {
     display: flex;
