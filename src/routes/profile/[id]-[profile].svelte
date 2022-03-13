@@ -109,7 +109,6 @@
     coll = reun(proDout.output.profile.members[proDout.uuid].collection)
     console.log(coll)
     collection = {
-        farming: [{name:"Wheat", string: coll.WHEAT},{name:"Carrot", string: coll.CARROT_ITEM }],
         foraging: [
             {name: "Oak Wood", string: coll.LOG, tier: [0,50,100,250,500,1000,2000,5000,10000,30000],maxtier: 30000, image:'/resource/minecraft/textures/blocks/log_oak.png'},
             {name: "Spruce Wood", string: coll["LOG:1"], tier: [0,50,100,250,1000,2000,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/blocks/log_spruce.png'},
@@ -142,10 +141,47 @@
             {name: "Magma Cream", string: coll["MAGMA_CREAM"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/magma_cream.png'},
             {name: "Slime ball", string: coll["SLIME_BALL"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/slimeball.png'},
         ],
-        mining: [
-            {name: "Mithril", string: coll["MITHRIL_ORE"], tier:[0,50,250,1000,2500,5000,10000,250000,500000,1000000],maxtier: 1000000, image: '/resource/minecraft/textures/items/prismarine_crystals.png'}
-        ]
 
+        mining: [
+            {name: "Mithril", string: coll["MITHRIL_ORE"], tier:[0,50,250,1000,2500,5000,10000,250000,500000,1000000],maxtier: 1000000, image: '/resource/minecraft/textures/items/prismarine_crystals.png'},
+            {name: "Cobblestone", string: coll["COBBLESTONE"], tier:[0,50,100,250,1000,2500,5000,10000,25000,40000,70000],maxtier: 70000, image: '/resource/minecraft/textures/blocks/cobblestone.png'},
+            {name: "Coal", string: coll["COAL"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/items/coal.png'},
+            {name: "Iron Ingot", string: coll["IRON_INGOT"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000,100000,200000,400000],maxtier: 400000, image: '/resource/minecraft/textures/items/iron_ingot.png'},
+            {name: "Gold Ingot", string: coll["GOLD_INGOT"], tier:[0,50,100,250,500,1000,2500,5000,10000,25000],maxtier: 25000, image: '/resource/minecraft/textures/items/gold_ingot.png'},
+            {name: "Diamond", string: coll["DIAMOND_BLOCK"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/diamond.png'},
+            {name: "Lapis Lazuli", string: coll["INK_SACK:4"], tier:[0,50,250,1000,2000,10000,25000,50000,100000, 150000,250000],maxtier: 250000, image: '/resource/minecraft/textures/blocks/lapis_block.png'},
+            {name: "Emerald", string: coll["EMERALD"], tier:[0,50,100,250,1000,5000,15000,30000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/items/emerald.png'},
+            {name: "Redstone", string: coll["REDSTONE"], tier:[0,100,250,750,1500,3000,5000,10000,25000,50000,200000,400000,600000,800000,1000000,1200000,1400000],maxtier: 1400000, image: '/resource/minecraft/textures/items/redstone_dust.png'},
+            {name: "Nether Quartz", string: coll["QUARTZ"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/quartz.png'},
+            {name: "OBSIDIAN", string: coll["OBSIDIAN"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/blocks/obsidian.png'},
+            {name: "Glowstone", string: coll["GLOWSTONE_DUST"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/glowstone_dust.png'},
+            {name: "Gravel", string: coll["GRAVEL"], tier:[0,50,100,250,1000,2500,5000,10000,15000,50000],maxtier: 50000, image: '/resource/minecraft/textures/blocks/gravel.png'},
+            {name: "Ice", string: coll["ICE"], tier:[0,50,100,250,500,1000,5000,10000,50000,100000,250000],maxtier: 250000, image: '/resource/minecraft/textures/blocks/ice.png'},
+            {name: "NETHERRACK", string: coll["NETHERRACK"], tier:[0,50,250,500,1000,5000],maxtier: 5000, image: '/resource/minecraft/textures/blocks/netherrack.png'},
+            {name: "Sand", string: coll["SAND"], tier:[0,50,250,500,1000,2500,5000],maxtier: 2500, image: '/resource/minecraft/textures/blocks/sand.png'},
+            {name: "End Stone", string: coll["ENDER_STONE"], tier:[0,50,100,250,1000,2500,5000,10000,15000,25000],maxtier: 25000, image: '/resource/minecraft/textures/blocks/end_stone.png'},
+        ],
+
+        farming: [
+            {name: "Wheat", string: coll["WHEAT"], tier:[0,50,100,250,500,1000,2500,10000,15000,25000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/items/wheat.png'},
+            {name: "Carrot", string: coll["CARROT_ITEM"], tier:[0,100,250,500,1700,5000,10000,25000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/items/carrot.png'},
+            {name: "Potato", string: coll["POTATO_ITEM"], tier:[0,100,200,500,1750,5000,10000,25000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/items/potato.png'},
+            {name: "Pumpkin", string: coll["PUMPKIN"], tier:[0,40,100,250,1000,2500,5000,10000,25000,50000,100000,250000],maxtier: 250000, image: '/resource/minecraft/textures/blocks/pumpkin_side.png'},
+            {name: "Melon", string: coll["MELON"], tier:[0,250,500,1250,5000,15500,25000,50000,100000,250000],maxtier: 250000, image: '/resource/minecraft/textures/items/melon.png'},
+            {name: "Seed", string: coll["SEEDS"], tier:[0,50,100,250,1000,2500,5000],maxtier: 5000, image: '/resource/minecraft/textures/items/seeds_wheat.png'},
+            {name: "Mushroom", string: coll["MUSHROOM_COLLECTION"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/blocks/mushroom_red.png'},
+            {name: "Cocoa bean", string: coll["INK_SACK:3"], tier:[0,75,200,500,2000,5000,10000,20000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/misc/unknown_server.png'},
+            {name: "Cactus", string: coll["CACTUS"], tier:[0,100,250,500,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/blocks/cactus_side.png'},
+            {name: "Sugar Cane", string: coll["SUGAR_CANE"], tier:[0,100,250,500,1000,2000,5000,10000,20000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/sugar.png'},
+            {name: "Feather", string: coll["FEATHER"], tier:[0,50,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/feather.png'},
+            {name: "Leather", string: coll["LEATHER"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000,100000],maxtier: 100000, image: '/resource/minecraft/textures/items/leather.png'},
+            {name: "Pork Chop", string: coll["PORK"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/porkchop_raw.png'},
+            {name: "Chicken", string: coll["RAW_CHICKEN"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/chicken_raw.png'},
+            {name: "Mutton", string: coll["MUTTON"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/mutton_raw.png'},
+            {name: "Rabbit", string: coll["RABBIT"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000],maxtier: 50000, image: '/resource/minecraft/textures/items/rabbit_raw.png'},
+            {name: "Nether Wart", string: coll["NETHER_STALK"], tier:[0,50,100,250,1000,2500,5000,10000,25000,50000,75000,100000,250000],maxtier: 250000, image: '/resource/minecraft/textures/items/nether_wart.png'},
+
+        ], 
     }
         // 50, 100, 250, 1000, 2000, 5000, 10000, 15000, 25000
         // console.log(proDout.output.profile.members[proDout.uuid])
@@ -184,6 +220,12 @@
 {#if coll !== undefined}
 <div class="statscotent">
 <!---started collection-->
+<!---farming-->
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_hoe.png" alt="Farming logo">Farming:</div>
+{#each collection.farming as item}
+<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
+{/each}
+
 <!---mining-->
 <div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_pickaxe.png" alt="Mining logo">Mining:</div>
 {#each collection.mining as item}
