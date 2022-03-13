@@ -119,6 +119,13 @@
             {name: "Lily Pad", string: coll["WATER_LILY"], tier: [0, 10, 50, 100, 200, 500, 1500, 3000, 6000, 10000],maxtier:10000, image: '/resource/minecraft/textures/blocks/waterlily.png'},
             {name: "Ink Sac", string: coll["INK_SACK"], tier: [0, 20, 40, 100, 200, 400, 800, 1500, 2500, 4000],maxtier:4000, image: '/resource/minecraft/textures/items/dye_powder_black.png'},
             {name: "Sponge", string: coll["SPONGE"], tier: [0, 20, 40, 100, 200, 400, 800, 1500, 2500, 4000],maxtier:4000, image: '/resource/minecraft/textures/blocks/sponge.png'},
+        ],
+        combat: [
+            {name: "Rotten Flesh", string: coll["ROTTEN_FLESH"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000, 100000],maxtier: 100000, image: '/resource/minecraft/textures/items/rotten_flesh.png'},
+            {name: "Bone", string: coll["BONE"], tier: [0, 50, 100, 250, 500, 1000, 5000, 10000, 25000, 50000, 150000],maxtier: 150000, image: '/resource/minecraft/textures/items/bone.png'},
+            {name: "String", string: coll["STRING"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/string.png'},
+            {name: "Spider eye", string: coll["SPIDER_EYE"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/spider_eye.png'},
+            {name: "Gun powder", string: coll["GUNPOWDER"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/gunpowder.png'},
         ]
     }
         // 50, 100, 250, 1000, 2000, 5000, 10000, 15000, 25000
@@ -159,7 +166,7 @@
 <div class="statscotent">
 <!---started collection-->
 <!---foraging-->
-<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/blocks/sapling_jungle.png" alt="fishing logo">FORAGING:</div>
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/blocks/sapling_jungle.png" alt="Foraging logo">FORAGING:</div>
 {#each collection.foraging as item}
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
@@ -170,6 +177,12 @@
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
     
+<!---Combat-->
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_sword.png" alt="Combat logo">Combat:</div>
+{#each collection.combat as item}
+<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
+{/each}
+
 <!---ended collection-->
 
 <p class="smalltext">*Note: only count one members in a co-op only</p>

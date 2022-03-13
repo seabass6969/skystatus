@@ -30,4 +30,7 @@
 </svelte:head>
 <h1 class="secondarycolor textspecial">The all-in-one skyblock website for you</h1>
 <p class="subtext">💯🙃</p>
+<div class="smalltext">
+Create by Cephas. <a href="https://github.com/seabass6969/skystatus/blob/master/LICENSE">License under Apache-2.0 License</a>
+</div>
 <div class="back-bg"></div>

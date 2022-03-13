@@ -44,7 +44,17 @@
     export let collectiontier = undefined
     export let imageurl = undefined
     export let maxtier = undefined
+    function reun(valable){
+        if(valable === undefined){
+            return 0 
+        }else{
+            return valable
+        }
+    }
     function getlevel(){
+        if(string === undefined){
+            return 0;
+        }
         if(string >= maxtier){
             return "MAX"
         }
@@ -61,6 +71,6 @@
 <div class="collecion-name">
 <span class="stats-name">{ITEMNAME} <span></span><span class="stats-value">{getlevel()}</span>
 </div>
-<div class="collection-amount"> {string}</div>
+<div class="collection-amount"> {reun(string)}</div>
 
 </div>

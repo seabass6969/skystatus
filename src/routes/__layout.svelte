@@ -1,4 +1,4 @@
-<style>
+<style global>
     .header{
         font-size: 3vw;
     }
@@ -16,23 +16,23 @@
         font-size: 3.8vw;
         }
         .image{
-        width: 10vw;
-        height: 10vw;
+        width: 9vw;
+        height: 9vw;
         }
     }
-    a {
-        padding-left: 1vw;
-        padding-right:1vw;
+    .link {
+        padding-left: .6vw;
+        padding-right:.6vw;
     }
 </style>
 <header>
 <div class="header">
-    <a href="/"><img src="/favicon.png" class="image" alt="homeimage" ></a>
-    <a href="/bazaar" class="">bz</a>
-    <a href="/mayor" class="">mayor</a>
-    <a href="/news" class="">news</a>
-    <a href="/locationtracker" class="">location</a>
-    <a href="/profile">profile</a>
+    <a class="link" href="/"><img src="/favicon.png" class="image" alt="homeimage" ></a>
+    <a class="link" href="/bazaar" >bz</a>
+    <a class="link" href="/mayor" >mayor</a>
+    <a class="link" href="/news" >news</a>
+    <a class="link" href="/locationtracker" >place</a>
+    <a class="link" href="/profile">profile</a>
 <!--
     <a href="/profiles">profiles(not done)</a>
 -->

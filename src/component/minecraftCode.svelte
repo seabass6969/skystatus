@@ -1,6 +1,3 @@
-<style>
-
-</style>
 <script>
     export let text = ""
     function mainreplace(text){
