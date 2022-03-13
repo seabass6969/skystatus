@@ -79,11 +79,21 @@
             uuid: uuidout.id
         }
         console.log(output)
+        try{
         profiledata = {
-        first_join: proDout.output.profile.members[proDout.uuid].first_join,
+            first_join: proDout.output.profile.members[proDout.uuid].first_join,
             bank_balance: reun(proDout.output.profile.banking.balance.toFixed(2)),
             coin_purse: reun(proDout.output.profile.members[proDout.uuid].coin_purse.toFixed(2))
         }
+        }catch(err){
+            console.log(err)
+            profiledata = {
+                first_join: undefined,
+                bank_balance: undefined,
+                coin_purse: undefined
+            }
+        }
+
         skills = {
         experience_skill_alchemy: reun(proDout.output.profile.members[proDout.uuid].experience_skill_alchemy.toFixed(0)),
         experience_skill_carpentry: reun(proDout.output.profile.members[proDout.uuid].experience_skill_carpentry.toFixed(0)),
@@ -126,7 +136,16 @@
             {name: "String", string: coll["STRING"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/string.png'},
             {name: "Spider eye", string: coll["SPIDER_EYE"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/spider_eye.png'},
             {name: "Gun powder", string: coll["GUNPOWDER"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/gunpowder.png'},
+            {name: "Ender Pearl", string: coll["ENDER_PEARL"], tier: [0, 50, 250, 1000, 2500, 5000, 10000, 15000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/ender_pearl.png'},
+            {name: "Blaze Rod", string: coll["BLAZE_ROD"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/blaze_rod.png'},
+            {name: "Ghast Tear", string: coll["GHAST_TEAR"], tier: [0, 20, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/ghast_tear.png'},
+            {name: "Magma Cream", string: coll["MAGMA_CREAM"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/magma_cream.png'},
+            {name: "Slime ball", string: coll["SLIME_BALL"], tier: [0, 50, 100, 250, 1000, 2500, 5000, 10000, 25000, 50000],maxtier: 50000, image: '/resource/minecraft/textures/items/slimeball.png'},
+        ],
+        mining: [
+            {name: "Mithril", string: coll["MITHRIL_ORE"], tier:[0,50,250,1000,2500,5000,10000,250000,500000,1000000],maxtier: 1000000, image: '/resource/minecraft/textures/items/prismarine_crystals.png'}
         ]
+
     }
         // 50, 100, 250, 1000, 2000, 5000, 10000, 15000, 25000
         // console.log(proDout.output.profile.members[proDout.uuid])
@@ -165,6 +184,18 @@
 {#if coll !== undefined}
 <div class="statscotent">
 <!---started collection-->
+<!---mining-->
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_pickaxe.png" alt="Mining logo">Mining:</div>
+{#each collection.mining as item}
+<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
+{/each}
+
+<!---Combat-->
+<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_sword.png" alt="Combat logo">Combat:</div>
+{#each collection.combat as item}
+<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
+{/each}
+
 <!---foraging-->
 <div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/blocks/sapling_jungle.png" alt="Foraging logo">FORAGING:</div>
 {#each collection.foraging as item}
@@ -177,12 +208,6 @@
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
     
-<!---Combat-->
-<div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_sword.png" alt="Combat logo">Combat:</div>
-{#each collection.combat as item}
-<CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
-{/each}
-
 <!---ended collection-->
 
 <p class="smalltext">*Note: only count one members in a co-op only</p>
