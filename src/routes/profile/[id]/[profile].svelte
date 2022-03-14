@@ -14,6 +14,10 @@
     }
     .skills {
     }
+    .scrollable{
+        overflow: auto;
+white-space: nowrap;
+    }
 </style>
 <script context="module">
   export async function load({params}) {
@@ -28,8 +32,9 @@
     }
 </script>
 <script>
-    import ProgressBar from './../../component/ProgressBar.svelte'
-    import CollectionUi from './../../component/CollectionUI.svelte'
+    import ProgressBar from './../../../component/ProgressBar.svelte'
+    import CollectionUi from './../../../component/CollectionUI.svelte'
+    import ImageText from './../../../component/ImageText.svelte'
     import {BigNumber} from "bignumber.js"
     import { onMount } from 'svelte'
     function reun(valable){
@@ -51,6 +56,17 @@
     }
     let profiledata = {
         bank_balance: undefined,
+        critical_damage: undefined,
+        death_count: undefined,
+        total_kills: undefined,
+    }
+    let ah_data = {
+        ah_fees: undefined,
+        ah_earned: undefined,
+        ah_solded: undefined,
+        ah_spend: undefined,
+        ah_bidded: undefined,
+        ah_won: undefined
     }
     let skills = {
         experience_skill_alchemy: undefined,
@@ -93,6 +109,16 @@
                 coin_purse: undefined
             }
         }
+        profiledata.critical_damage = reun(proDout.output.profile.members[proDout.uuid].stats.highest_critical_damage.toFixed(1))
+        profiledata.death_count = reun(proDout.output.profile.members[proDout.uuid].death_count)
+        profiledata.total_kills = reun(proDout.output.profile.members[proDout.uuid].stats.kills)
+        ah_data = {
+            ah_fees: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_fees),
+            ah_earned: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_gold_earned),
+            ah_spend: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_gold_spent),
+            ah_bidded: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_bids),
+            ah_won: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_won),
+        }
 
         skills = {
         experience_skill_alchemy: reun(proDout.output.profile.members[proDout.uuid].experience_skill_alchemy.toFixed(0)),
@@ -107,7 +133,6 @@
         experience_skill_taming: reun(proDout.output.profile.members[proDout.uuid].experience_skill_taming.toFixed(0))
         }
     coll = reun(proDout.output.profile.members[proDout.uuid].collection)
-    console.log(coll)
     collection = {
         foraging: [
             {name: "Oak Wood", string: coll.LOG, tier: [0,50,100,250,500,1000,2000,5000,10000,30000],maxtier: 30000, image:'/resource/minecraft/textures/blocks/log_oak.png'},
@@ -199,9 +224,9 @@
 <p class="subsubtext">Last logon: {Date(profiledata.first_join)}</p>
 <p class="subsubtext">bank balance: {toformated(reun(profiledata.bank_balance))}</p>
 <p class="subsubtext">coin purse: {toformated(reun(profiledata.coin_purse))}</p>
-<p class="subsubtext maincolor">Skills:</p>
 {#if skills.experience_skill_taming !== undefined}
 <div class="skills">
+<span class="subheader subtext">Skills</span>
 <ProgressBar xp={skills.experience_skill_taming} text="Taming" Image="/resource/minecraft/textures/items/spawn_egg_overlay.png"/>
 <ProgressBar xp={skills.experience_skill_mining} text="Mining" Image="/resource/minecraft/textures/items/stone_pickaxe.png"/>
 <ProgressBar xp={skills.experience_skill_foraging} text="Foraging" Image="/resource/minecraft/textures/blocks/sapling_jungle.png"/>
@@ -216,46 +241,67 @@
 {:else}
 <p class="subsubtext">Not enabled your skills api</p>
 {/if}
-<p class="subsubtext maincolor">Collection: NOT GONNER COME SOOOOOOON</p>
 {#if coll !== undefined}
 <div class="statscotent">
 <!---started collection-->
+<span class="subheader subtext">Collection</span>
 <!---farming-->
 <div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_hoe.png" alt="Farming logo">Farming:</div>
+    <div class="scrollable">
 {#each collection.farming as item}
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
+    </div>
 
 <!---mining-->
 <div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_pickaxe.png" alt="Mining logo">Mining:</div>
+    <div class="scrollable">
 {#each collection.mining as item}
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
+    </div>
 
 <!---Combat-->
 <div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/stone_sword.png" alt="Combat logo">Combat:</div>
+    <div class="scrollable">
 {#each collection.combat as item}
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
-
+    </div>
 <!---foraging-->
 <div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/blocks/sapling_jungle.png" alt="Foraging logo">FORAGING:</div>
+    <div class="scrollable">
 {#each collection.foraging as item}
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
+    </div>
 
 <!---fishing-->
 <div class="subsubtext"><img class="normalimage" src="/resource/minecraft/textures/items/fish_pufferfish_raw.png" alt="Fishing logo">FISHING:</div>
+    <div class="scrollable">
 {#each collection.fishing as item}
 <CollectionUi ITEMNAME={item.name} string={item.string} collectiontier={item.tier} maxtier={item.maxtier} imageurl={item.image}/>
 {/each}
-    
+    </div>
 <!---ended collection-->
 
 <p class="smalltext">*Note: only count one members in a co-op only</p>
+<span class="subheader subtext">Top kills & deaths</span>
+<p class="smalltext">Total Deaths {reun(profiledata.death_count)}</p>
+<p class="smalltext">Total Kills {reun(profiledata.total_kills)}</p>
+<br>
+
+<span class="subheader subtext">Miscellaneous</span>
+<p class="smalltext"><img src="/resource/minecraft/textures/items/iron_sword.png" alt="">  Highest Critical damage {reun(profiledata.critical_damage)}</p>
+<span class="subsubtext"><img src="/resource/minecraft/textures/items/diamond.png" alt="">Auction House:</span>
+<p class="smalltext">Total spending: {toformated(reun(ah_data.ah_spend))}</p>
+<p class="smalltext">Total earning: {toformated(reun(ah_data.ah_earned))}</p>
+<p class="smalltext">Auction fees: {toformated(reun(ah_data.ah_fees))}</p>
+<p class="smalltext">Bids: {toformated(reun(ah_data.ah_bidded))}</p>
+<p class="smalltext">Wons: {toformated(reun(ah_data.ah_won))}</p>
 </div>
 {:else}
-<p class="subsubtext">Not enabled your skills api</p>
+<p class="subsubsubtext">Not enabled your skills api</p>
 {/if}
 {/if}
 <div class="back-bg"></div>

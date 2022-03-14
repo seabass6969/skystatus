@@ -62,6 +62,10 @@ select {
 .smalltext {
     font-size: 2vw;
 }
+.subheader {
+    text-shadow: 0px 0px 7px rgb(0 0 0 / 30%);
+    border-bottom: 4px solid #A6145D;
+}
 .normalimage {
     width:3vw;
     height:3vw;
