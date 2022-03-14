@@ -81,7 +81,7 @@
     {/each}
 </select>
 <br>
-<a class="subsubtext" href="/profile/{playervalue}-{profileidfetch.selected_value}">go</a>
+<a class="subsubtext" href="/profile/{playervalue}/{profileidfetch.selected_value}">go</a>
 {:else if profileidfetch.success !== true}
 <p class="subtext">type in your username properly</p>
 {/if}
