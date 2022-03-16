@@ -25,6 +25,7 @@
 
 <script>
     import json from './bazaar.json'
+    import replacer from './bazaar_replace.json'
 async function getBazaar(){
         let response = await fetch("https://api.hypixel.net/skyblock/bazaar");
         let output = await response.json();
@@ -36,6 +37,9 @@ async function getBazaar(){
     $: {
         done = false
         realproccessname = itemname.toUpperCase().replaceAll(" ","_");
+        for (let a=0; a < replacer.products.length; a++){
+            if(realproccessname == replacer.products[a].name)realproccessname = replacer.products[a].replacer 
+        }
         for (let i=0; i < json.products.length; i++){
             if(realproccessname == json.products[i]){done = true}
         }

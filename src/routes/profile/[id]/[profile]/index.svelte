@@ -1,4 +1,7 @@
 <style>
+    .imageofuuid{
+        float:left
+    }
     .back-bg{
     background-image: url('/background/profile_opt.webp');
     background-repeat: no-repeat;
@@ -32,9 +35,9 @@ white-space: nowrap;
     }
 </script>
 <script>
-    import ProgressBar from './../../../component/ProgressBar.svelte'
-    import CollectionUi from './../../../component/CollectionUI.svelte'
-    import ImageText from './../../../component/ImageText.svelte'
+    import ProgressBar from './../../../../component/ProgressBar.svelte'
+    import CollectionUi from './../../../../component/CollectionUI.svelte'
+    import ImageText from './../../../../component/ImageText.svelte'
     import {BigNumber} from "bignumber.js"
     import { onMount } from 'svelte'
     function reun(valable){
@@ -59,6 +62,7 @@ white-space: nowrap;
         critical_damage: undefined,
         death_count: undefined,
         total_kills: undefined,
+        item_fished: undefined
     }
     let ah_data = {
         ah_fees: undefined,
@@ -67,6 +71,10 @@ white-space: nowrap;
         ah_spend: undefined,
         ah_bidded: undefined,
         ah_won: undefined
+    }
+    let giftdata = {
+        gift_given: undefined,
+        gift_received: undefined
     }
     let skills = {
         experience_skill_alchemy: undefined,
@@ -97,16 +105,20 @@ white-space: nowrap;
         console.log(output)
         try{
         profiledata = {
-            first_join: proDout.output.profile.members[proDout.uuid].first_join,
+            last_save: proDout.output.profile.members[proDout.uuid].last_save,
             bank_balance: reun(proDout.output.profile.banking.balance.toFixed(2)),
-            coin_purse: reun(proDout.output.profile.members[proDout.uuid].coin_purse.toFixed(2))
+            coin_purse: reun(proDout.output.profile.members[proDout.uuid].coin_purse.toFixed(2)),
+                fairy_souls: reun(proDout.output.profile.members[proDout.uuid].fairy_souls),
+                item_fished: reun(proDout.output.profile.members[proDout.uuid].stats.items_fished) 
         }
         }catch(err){
             console.log(err)
             profiledata = {
-                first_join: undefined,
+                last_save: undefined,
                 bank_balance: undefined,
-                coin_purse: undefined
+                coin_purse: undefined,
+                fairy_souls: undefined,
+                item_fished: undefined
             }
         }
         profiledata.critical_damage = reun(proDout.output.profile.members[proDout.uuid].stats.highest_critical_damage.toFixed(1))
@@ -118,6 +130,10 @@ white-space: nowrap;
             ah_spend: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_gold_spent),
             ah_bidded: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_bids),
             ah_won: reun(proDout.output.profile.members[proDout.uuid].stats.auctions_won),
+        }
+        giftdata = {
+            gift_given: reun(proDout.output.profile.members[proDout.uuid].stats.gifts_given),
+            gift_received: reun(proDout.output.profile.members[proDout.uuid].stats.gifts_received)
         }
 
         skills = {
@@ -221,9 +237,15 @@ white-space: nowrap;
 {#if proDout.loading == true}
 <p>waiting</p>
 {:else}
-<p class="subsubtext">Last logon: {Date(profiledata.first_join)}</p>
+<img src="https://crafatar.com/renders/body/{proDout.uuid}" alt="" class="imageofuuid">
+<div class="floatright">
+<p class="subsubtext">last save: {reun(new Date(profiledata.last_save))}</p>
 <p class="subsubtext">bank balance: {toformated(reun(profiledata.bank_balance))}</p>
 <p class="subsubtext">coin purse: {toformated(reun(profiledata.coin_purse))}</p>
+<p class="subsubtext">fairy souls: {reun(profiledata.fairy_souls)}</p>
+</div>
+<br>
+
 {#if skills.experience_skill_taming !== undefined}
 <div class="skills">
 <span class="subheader subtext">Skills</span>
@@ -292,6 +314,7 @@ white-space: nowrap;
 <br>
 
 <span class="subheader subtext">Miscellaneous</span>
+<p class="smalltext"><img src="/resource/minecraft/textures/items/fish_cod_raw.png" alt="">Items fished: {reun(profiledata.item_fished)}</p>
 <p class="smalltext"><img src="/resource/minecraft/textures/items/iron_sword.png" alt="">  Highest Critical damage {reun(profiledata.critical_damage)}</p>
 <span class="subsubtext"><img src="/resource/minecraft/textures/items/diamond.png" alt="">Auction House:</span>
 <p class="smalltext">Total spending: {toformated(reun(ah_data.ah_spend))}</p>
@@ -300,6 +323,9 @@ white-space: nowrap;
 <p class="smalltext">Bids: {toformated(reun(ah_data.ah_bidded))}</p>
 <p class="smalltext">Wons: {toformated(reun(ah_data.ah_won))}</p>
 </div>
+<span class="subsubtext"><img src="/resource/minecraft/textures/items/diamond.png" alt="">Gift:</span>
+<p class="smalltext">Gift given: {reun(giftdata.gift_given)}</p>
+<p class="smalltext">Gift received: {reun(giftdata.gift_received)}</p>
 {:else}
 <p class="subsubsubtext">Not enabled your skills api</p>
 {/if}
