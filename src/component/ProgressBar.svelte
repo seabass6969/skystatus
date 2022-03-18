@@ -119,6 +119,21 @@ let reallv = [
     font-size: 2.7vw;
     }
 }
+@media (min-width: 1000px){
+    .IMG{
+    width:3vw;
+    height:3vw;
+    }
+    .barIMG{
+    width: 5vw;
+    height: 5vw;
+    top: 75px
+    }
+    .barText{
+    left: 100px;
+    top: 60px
+    }
+}
 </style>
 <div class="bar" bind:clientWidth={w}>
 <p class="barText">{text} {roundup(xp)[1]}</p>

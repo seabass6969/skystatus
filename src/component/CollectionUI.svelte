@@ -37,6 +37,14 @@
     margin-top: 2vw;
     }
 }
+@media (min-width: 1000px){
+    .collection-icon {
+    width: 5vw;
+    height: 5vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    }
+}
 </style>
 <script>
     export let ITEMNAME = undefined 

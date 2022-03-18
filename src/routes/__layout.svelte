@@ -33,6 +33,7 @@
     <a class="link" href="/news" >news</a>
     <a class="link" href="/locationtracker" >place</a>
     <a class="link" href="/profile">profile</a>
+    <a class="link" href="/contactme">me</a>
 <!--
     <a href="/profiles">profiles(not done)</a>
 -->

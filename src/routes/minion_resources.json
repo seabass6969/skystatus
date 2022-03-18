@@ -1,0 +1,7 @@
+{
+    "fuel":[
+        {"name":"Coal", "speed":0.05},
+        {"name":"Block of Coal", "speed":0.05}],
+    "minion":[
+    {"name": "Wheat Minion", "resource_generated": ["Wheat","Seeds"], "tier": []}]
+}

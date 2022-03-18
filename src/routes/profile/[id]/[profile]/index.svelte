@@ -1,6 +1,10 @@
 <style>
     .imageofuuid{
-        float:left
+        float:left;
+        width: 8vw;
+        height: 19vw;
+        margin-right: 2vw;
+        margin-bottom: 1vw;
     }
     .back-bg{
     background-image: url('/background/profile_opt.webp');
@@ -19,8 +23,19 @@
     }
     .scrollable{
         overflow: auto;
-white-space: nowrap;
+        white-space: nowrap;
     }
+@media (max-width: 600px){
+    .imageofuuid{
+        width: 26vw;
+        height: 60vw;
+        margin-right: 5vw;
+    }
+}
+@media (min-width: 1000px){
+    .scrollable{
+    }
+}
 </style>
 <script context="module">
   export async function load({params}) {
@@ -108,7 +123,7 @@ white-space: nowrap;
             last_save: proDout.output.profile.members[proDout.uuid].last_save,
             bank_balance: reun(proDout.output.profile.banking.balance.toFixed(2)),
             coin_purse: reun(proDout.output.profile.members[proDout.uuid].coin_purse.toFixed(2)),
-                fairy_souls: reun(proDout.output.profile.members[proDout.uuid].fairy_souls),
+                fairy_souls: reun(proDout.output.profile.members[proDout.uuid].fairy_souls_collected),
                 item_fished: reun(proDout.output.profile.members[proDout.uuid].stats.items_fished) 
         }
         }catch(err){
