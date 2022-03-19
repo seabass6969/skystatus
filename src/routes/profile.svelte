@@ -34,6 +34,7 @@
 <title>profile</title>
 </svelte:head>
 <script>
+    import Thinking from './../component/thinking.svelte'
     let playervalue = ""
     let finalplayervalue = ""
     let profileidfetch = {

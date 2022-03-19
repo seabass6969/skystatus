@@ -1,7 +1,20 @@
 {
     "fuel":[
-        {"name":"Coal", "speed":0.05},
-        {"name":"Block of Coal", "speed":0.05}],
+        {"name":"Coal", "speed":0.05, "times": false, "hour":0.5},
+        {"name":"Block of Coal", "speed":0.05, "times": false, "hour":5},
+        {"name":"Enchanted Bread", "speed":0.05, "times": false, "hour":12},
+        {"name":"Enchanted Coal", "speed":0.1, "times": false, "hour":24},
+        {"name":"Enchanted Charcoal", "speed":0.2, "times": false, "hour":36},
+        {"name":"Solar Panel", "speed":0.125, "times": false, "hour":0},
+        {"name":"Enchanted Lava Bucket", "speed":0.25, "times": false, "hour":0},
+        {"name":"Hamster Wheel", "speed":0.5, "times": false, "hour":24},
+        {"name":"Foul Flesh", "speed":0.9, "times": false, "hour":5},
+        {"name":"Catalyst", "speed":2, "times": true, "hour":3},
+        {"name":"Hyper Catalyst", "speed":3, "times": true, "hour":6},
+        {"name":"Tasty cheese", "speed":2, "times": true, "hour":1},
+        {"name":"Magma Bucket", "speed":0.3, "times": false, "hour":0},
+        {"name":"Plasma Bucket", "speed":0.35, "times": false, "hour":0}
+    ],
     "minion":[
     {"name": "Wheat Minion", "resource_generated": ["Wheat","Seeds"], "tier": []}]
 }

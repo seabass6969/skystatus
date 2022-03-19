@@ -22,6 +22,7 @@
 <title>News</title>
 </svelte:head>
 <script>
+    import Thinking from './../component/thinking.svelte'
     async function getNews(){
         let response = await fetch("https://skyproxyjs.cephas8080.workers.dev/api/News");
         let output = await response.json();
@@ -30,7 +31,7 @@
     let out = getNews();
 </script>
 {#await out}
-<h1>please waiting</h1>
+<Thinking />
 {:then output}
 {#each output["items"] as items}
 <p class="secondarycolor underline subtext">title: {items["title"]}</p>

@@ -24,6 +24,7 @@
 </svelte:head>
 
 <script>
+    import Thinking from './../component/thinking.svelte'
     import json from './bazaar.json'
     import replacer from './bazaar_replace.json'
 async function getBazaar(){
@@ -47,7 +48,7 @@ async function getBazaar(){
     let done = false
 </script>
 {#await out}
-<p>waiting</p>
+<Thinking />
 {:then output}
 <h1 class="subtext thirdcolor">type item to search on bz:</h1>
 <input type="text" bind:value={itemname} class="maincolor hoverinput textbox">

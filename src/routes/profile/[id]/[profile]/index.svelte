@@ -51,6 +51,7 @@
 </script>
 <script>
     import ProgressBar from './../../../../component/ProgressBar.svelte'
+    import Thinking from './../../../../component/thinking.svelte'
     import CollectionUi from './../../../../component/CollectionUI.svelte'
     import ImageText from './../../../../component/ImageText.svelte'
     import {BigNumber} from "bignumber.js"
@@ -250,9 +251,9 @@
 
 <p class="subtext">{id} profile: </p>
 {#if proDout.loading == true}
-<p>waiting</p>
+<Thinking />
 {:else}
-<img src="https://crafatar.com/renders/body/{proDout.uuid}" alt="" class="imageofuuid">
+<img src="https://crafatar.com/renders/body/{proDout.uuid}?overlay" alt="" class="imageofuuid">
 <div class="floatright">
 <p class="subsubtext">last save: {reun(new Date(profiledata.last_save))}</p>
 <p class="subsubtext">bank balance: {toformated(reun(profiledata.bank_balance))}</p>

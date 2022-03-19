@@ -19,6 +19,7 @@
 </svelte:head>
 
 <script>
+    import Thinking from './../component/thinking.svelte'
     import MinecraftCode from './../component/minecraftCode.svelte';
     async function getMayor(){
         let response = await fetch("https://api.hypixel.net/resources/skyblock/election");
@@ -28,7 +29,7 @@
     let out = getMayor();
 </script>
 {#await out}
-<h1>please waiting</h1>
+<Thinking />
 {:then output}
 <p class="secondarycolor subtext"> currently the mayor is: {output["mayor"]["name"]} ({output["mayor"]["key"]})</p>
 <p class="secondarycolor subtext">perks: </p>
