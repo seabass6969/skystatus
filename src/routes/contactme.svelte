@@ -15,5 +15,6 @@
 </style>
 <p class="subtext">contact me:</p>
 <p class="subsubtext"><img src="/Discord-Logo-Color.svg" alt="discord logo" class="normalimage">Discord: Netscapes#9407</p>
+<p class="subsubtext">I accept suggestion! Feel free to file issue in github. Also you can do pull request<br/><br/><a href="https://github.com/seabass6969/skystatus"><img src="/github.png" alt="Github logo" class="normalimage">github repo</a>   <p>
 <p class="subsubtext">Main website: <a href="https://cephas.monster">cephas.monster</a></p>
 <div class="back-bg"></div>
