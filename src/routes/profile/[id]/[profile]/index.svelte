@@ -121,10 +121,8 @@
         console.log(output)
         try{
         profiledata = {
-            last_save: proDout.output.profile.members[proDout.uuid].last_save,
             bank_balance: reun(proDout.output.profile.banking.balance.toFixed(2)),
             coin_purse: reun(proDout.output.profile.members[proDout.uuid].coin_purse.toFixed(2)),
-                fairy_souls: reun(proDout.output.profile.members[proDout.uuid].fairy_souls_collected),
                 item_fished: reun(proDout.output.profile.members[proDout.uuid].stats.items_fished) 
         }
         }catch(err){
@@ -137,6 +135,8 @@
                 item_fished: undefined
             }
         }
+        profiledata.last_save = proDout.output.profile.last_save,
+        profiledata.fairy_souls = reun(proDout.output.profile.members[proDout.uuid].fairy_souls_collected)
         profiledata.critical_damage = reun(proDout.output.profile.members[proDout.uuid].stats.highest_critical_damage.toFixed(1))
         profiledata.death_count = reun(proDout.output.profile.members[proDout.uuid].death_count)
         profiledata.total_kills = reun(proDout.output.profile.members[proDout.uuid].stats.kills)
@@ -255,7 +255,7 @@
 {:else}
 <img src="https://crafatar.com/renders/body/{proDout.uuid}?overlay" alt="" class="imageofuuid">
 <div class="floatright">
-<p class="subsubtext">last save: {reun(new Date(profiledata.last_save))}</p>
+<p class="subsubtext">last save: {reun(profiledata.last_save)}</p>
 <p class="subsubtext">bank balance: {toformated(reun(profiledata.bank_balance))}</p>
 <p class="subsubtext">coin purse: {toformated(reun(profiledata.coin_purse))}</p>
 <p class="subsubtext">fairy souls: {reun(profiledata.fairy_souls)}</p>

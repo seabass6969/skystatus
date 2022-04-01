@@ -82,8 +82,9 @@
     {/each}
 </select>
 <br>
-<a class="subsubtext" href="/profile/{playervalue}/{profileidfetch.selected_value}">go</a>
+<a class="subsubtext" href="/profile/{playervalue}/{profileidfetch.selected_value}">show the profile</a>
 {:else if profileidfetch.success !== true}
 <p class="subtext">type in your username properly</p>
 {/if}
+<br>
 <div class="back-bg"></div>
