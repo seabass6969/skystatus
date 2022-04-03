@@ -54,7 +54,7 @@
     import Thinking from './../../../../component/thinking.svelte'
     import CollectionUi from './../../../../component/CollectionUI.svelte'
     import ImageText from './../../../../component/ImageText.svelte'
-    import {BigNumber} from "bignumber.js"
+    import BigNumber from "bignumber.js"
     import { onMount } from 'svelte'
     function reun(valable){
         if(valable === undefined){
