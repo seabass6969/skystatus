@@ -34,6 +34,7 @@
 <title>profile</title>
 </svelte:head>
 <script>
+    import {link} from 'svelte-spa-router'
     import Thinking from './../component/thinking.svelte'
     let playervalue = ""
     let finalplayervalue = ""
@@ -82,7 +83,7 @@
     {/each}
 </select>
 <br>
-<a class="subsubtext" href="/profile/{playervalue}/{profileidfetch.selected_value}">show the profile</a>
+<a class="subsubtext" href="/profile/{playervalue}/{profileidfetch.selected_value}" use:link>show the profile</a>
 {:else if profileidfetch.success !== true}
 <p class="subtext">type in your username properly</p>
 {/if}

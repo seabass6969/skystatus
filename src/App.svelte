@@ -11,6 +11,7 @@
     import minion from './routes/minion.svelte'
     import news from './routes/news.svelte'
     import profile from './routes/profile.svelte'
+    import profileid from './routes/profileid.svelte'
     const routes = {
         '/': index,
         '/ah': ah,
@@ -21,6 +22,7 @@
         '/minion': minion,
         '/news': news,
         '/profile': profile,
+        '/profile/:id/:profile': profileid,
         '*': __error
     }
 </script>

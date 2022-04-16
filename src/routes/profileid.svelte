@@ -37,23 +37,11 @@
     }
 }
 </style>
-<script context="module">
-  export async function load({params}) {
-    const id = params.id
-    const profile = params.profile
-      return {
-        props: {
-            id,
-            profile,
-        }
-      }
-    }
-</script>
 <script>
-    import ProgressBar from './../../../../component/ProgressBar.svelte'
-    import Thinking from './../../../../component/thinking.svelte'
-    import CollectionUi from './../../../../component/CollectionUI.svelte'
-    import ImageText from './../../../../component/ImageText.svelte'
+    import ProgressBar from './../component/ProgressBar.svelte'
+    import Thinking from './../component/thinking.svelte'
+    import CollectionUi from './../component/CollectionUI.svelte'
+    import ImageText from './../component/ImageText.svelte'
     import BigNumber from "bignumber.js"
     import { onMount } from 'svelte'
     function reun(valable){
@@ -66,8 +54,10 @@
     function toformated(number){
         return new BigNumber(number.toString()).toFormat()
     }
-    export let id;
-    export let profile;
+    export let params = {};
+    let id = params.id;
+    let profile = params.profile;
+
     let proDout = {
         output: undefined, 
         loading: false,
