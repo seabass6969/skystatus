@@ -1,3 +1,6 @@
+<script>
+import {link} from 'svelte-spa-router'
+</script>
 <style global>
     .header{
         font-size: 3vw;
@@ -25,24 +28,14 @@
         padding-right:.6vw;
     }
 </style>
-<header>
 <div class="header">
-    <a class="link" href="/"><img src="/favicon.png" class="image" alt="homeimage" ></a>
-    <a class="link" href="/bazaar" >bz</a>
-    <a class="link" href="/mayor" >mayor</a>
-    <a class="link" href="/news" >news</a>
-    <a class="link" href="/locationtracker" >place</a>
-    <a class="link" href="/profile">profile</a>
-    <a class="link" href="/contactme">me</a>
-<!--
-    <a href="/profiles">profiles(not done)</a>
--->
+    <a class="link" href="/" use:link><img src="/favicon.png" class="image" alt="homeimage" ></a>
+    <a class="link" href="/bazaar" use:link>bz</a>
+    <a class="link" href="/mayor" use:link>mayor</a>
+    <a class="link" href="/news" use:link>news</a>
+    <a class="link" href="/locationtracker" use:link>place</a>
+    <a class="link" href="/profile" use:link>profile</a>
+    <a class="link" href="/contactme" use:link>me</a>
 </div>
 <br>
 
-</header>
-<main>
-  <slot />
-</main>
-<footer>
-</footer>
