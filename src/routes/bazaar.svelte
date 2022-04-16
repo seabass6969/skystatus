@@ -25,8 +25,8 @@
 
 <script>
     import Thinking from './../component/thinking.svelte'
-    import json from './bazaar.json'
-    import replacer from './bazaar_replace.json'
+    import json from './../resource/bazaar.json'
+    import replacer from './../resource/bazaar_replace.json'
 async function getBazaar(){
         let response = await fetch("https://api.hypixel.net/skyblock/bazaar");
         let output = await response.json();

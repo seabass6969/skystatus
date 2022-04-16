@@ -31,7 +31,7 @@
 <title>Location Tracker</title>
 </svelte:head>
 <script>
-    import json from './skyplace.json'
+    import json from './../resource/skyplace.json'
     let playervalue = ""
     let finalplayervalue = ""
     let locationdata = {

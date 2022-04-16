@@ -37,6 +37,10 @@ let reallv = [
             return [0,0,0,0]
         }
     };
+    /** @param {number} xp - the xp value 
+    * @param {string} Image - the image url
+    * @param {string} text - the text
+    */
     export let xp = undefined;
     export let Image = undefined;
     export let text = undefined

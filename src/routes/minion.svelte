@@ -14,9 +14,9 @@
     }
 </style>
 <script>
-    import json from './bazaar.json'
-    import replacer from './bazaar_replace.json'
-    import minionjson from './minion_resources.json'
+    import json from './../resource/bazaar.json'
+    import replacer from './../resource/bazaar_replace.json'
+    import minionjson from './../resource/minion_resources.json'
     import Thinking from './../component/thinking.svelte'
     import { onMount } from 'svelte'
         let bzdata = {
