@@ -2,6 +2,10 @@
   "products": [
     {"name":"COCO_BEAN", "replacer":"INK_SACK:3"},
     {"name":"CLAY", "replacer":"CLAY_BALL"},
-    {"name":"ENCHANTED_CLAY", "replacer":"ENCHANTED_CLAY_BALL"}
+    {"name":"ENCHANTED_CLAY", "replacer":"ENCHANTED_CLAY_BALL"},
+    {"name":"RED_SAND", "replacer":"SAND:1"},
+    {"name":"MYCELIUM", "replacer":"MYCEL"},
+    {"name":"ENCHANTED_SULPHUR", "replacer":"ENCHANTED_SULPHUR_CUBE"}
+
   ]
 }
