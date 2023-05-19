@@ -95,7 +95,7 @@ const init = {
     startup()
     async function startup(){ 
         proDout.loading = true
-        let response = await fetch('https://https://skystatusback.onrender.com/api/profile/' + id + '/' + profile, init);
+        let response = await fetch('https://skystatusback.onrender.com/api/profile/' + id + '/' + profile, init);
         let output = await response.json();
         let res = await fetch("https://skystatusback.onrender.com/fetchuuid/" + id.replaceAll(" ",""), init)
         let uuidout = await res.json()        
