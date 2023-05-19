@@ -1,16 +1,7 @@
 <style>
-    .tablestyle {
+    .topgrid {
         display: grid;
-        grid-template-columns: auto auto auto 40vw;
-        gap: 5px;
-        margin-left: auto;
-        margin-right: auto;
-
-    }
-    @media (max-width: 600px){
-    .tablestyle {
-        grid-template-columns: auto auto auto 10vw;
-    }
+        grid-template-columns: 80% 20%;
     }
     .back-bg{
     background-image: url('/background/profile_opt.webp');
@@ -26,66 +17,52 @@
     z-index: -1;
     }
     .textbox{
-    padding-left: 10px; 
-    padding-right: 10px;
+        padding-left: 10px; 
+        padding-right: 10px;
+        margin-left: 3vw;
+        margin-right: 3vw;
+        width: 75%;
+    }
+    .showme {
+        margin-right: 3vw;
     }
    </style>
 <svelte:head>
 <title>profile</title>
 </svelte:head>
 <script>
+    //@ts-ignore
     import {link} from 'svelte-spa-router'
     import Thinking from './../component/thinking.svelte'
+const init = {
+    headers: {
+      'content-type': 'application/json',
+      "Access-Control-Allow-Origin": "*"
+    },
+  };
+
     let playervalue = ""
-    let finalplayervalue = ""
-    let profileidfetch = {
-        loading: false,
-        success: false,
-        profilelist: undefined,
-        selected_value: undefined
-    }
-    let profiledata = {
-        loading: false,
-        success: false,
-        output: undefined
-    }
-    async function showprofile() {
-        profileidfetch.loading = true;
-        playervalue = playervalue.replaceAll(" ", "")
-        const response = await fetch('https://skyproxyjs.cephas8080.workers.dev/api/profileslist/' + playervalue)
-        const output = await response.json()
-        if(output.error == undefined){
-        profileidfetch.success = true
-        profileidfetch = {
-            profilelist: output,
-            loading: false
-        }
-        console.log(output)
-        finalplayervalue = playervalue
-        }else{
-            profileidfetch.success = false
-        }
+    let selected_value = ""
+    let list_of_item 
+    let start_loading = false
+    let finish_loaded = false 
+    async function showprofile(){
+        start_loading = true
+        list_of_item= await fetch('https://skystatusback.onrender.com/api/profileslist/' + playervalue, init)
     }
     function onchangevalue(){
-        profileidfetch.loading = false;
+
     }
 </script>
-<div class="tablestyle">
-<input type="text" bind:value={playervalue} on:input={onchangevalue} on:change={showprofile} class="textbox hoverinput maincolor">
-<button on:click={showprofile} class="showme subsubtext hoverinput maincolor">fetch</button>
+<div class="topgrid">
+    <input type="text" bind:value={playervalue} on:input={onchangevalue} class="textbox hoverinput maincolor">
+    <button on:click={showprofile} class="showme subsubtext hoverinput maincolor">fetch</button>
 </div>
-{#if profileidfetch.success !== false}
-<br>
-<p class="subtext">select your profile:</p>
-<select bind:value={profileidfetch.selected_value} >
-    {#each profileidfetch.profilelist as profilelist}
-        <option value={profilelist.profile_id}>{profilelist.cute_name}</option>
-    {/each}
-</select>
-<br>
-<a class="subsubtext" href="/profile/{playervalue}/{profileidfetch.selected_value}" use:link>show the profile</a>
-{:else if profileidfetch.success !== true}
-<p class="subtext">type in your username properly</p>
+{#if finish_loaded == true}
+<Thinking />
+{/if}
+{#if start_loading == true}
+    <a class="subsubtext" href="/profile/{playervalue}/{selected_value}" use:link>show the profile</a>
 {/if}
 <br>
 <div class="back-bg"></div>

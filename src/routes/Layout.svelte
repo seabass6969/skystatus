@@ -3,7 +3,7 @@ import {link} from 'svelte-spa-router'
 </script>
 <style global>
     .header{
-        font-size: 3vw;
+        font-size: 2rem;
     }
     .image{
         width: 8vw;
@@ -16,7 +16,7 @@ import {link} from 'svelte-spa-router'
 
     @media (max-width: 600px){
         .header{
-        font-size: 3.8vw;
+        font-size: 0.8rem;
         }
         .image{
         width: 9vw;

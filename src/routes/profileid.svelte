@@ -43,6 +43,13 @@
     import CollectionUi from './../component/CollectionUI.svelte'
     import {collections} from './../resource/profile_resources'
     import {reun,toformated} from './../resource/util_profile'
+
+const init = {
+    headers: {
+      'content-type': 'application/json',
+      "Access-Control-Allow-Origin": "*"
+    },
+  };
     export let params = {};
     let id = params.id;
     let profile = params.profile;
@@ -88,9 +95,9 @@
     startup()
     async function startup(){ 
         proDout.loading = true
-        let response = await fetch('https://skyproxyjs.cephas8080.workers.dev/api/profile/' + id + '/' + profile );
+        let response = await fetch('https://https://skystatusback.onrender.com/api/profile/' + id + '/' + profile, init);
         let output = await response.json();
-        let res = await fetch("https://skyproxyjs.cephas8080.workers.dev/fetchuuid/" + id.replaceAll(" ",""))
+        let res = await fetch("https://skystatusback.onrender.com/fetchuuid/" + id.replaceAll(" ",""), init)
         let uuidout = await res.json()        
         proDout = {
             output: output,

@@ -26,7 +26,7 @@ button {
     border-style: solid;
     border-color: #00b9ff;
     background-color: #00b9ff;
-    font-size: 6vw;
+    font-size: 1rem;
     border-radius: 15px;
     display: block;
 }
@@ -37,14 +37,14 @@ input {
     width: 50vw;
     height: 5vw;
     display: block;
-    font-size: 4vw;
+    font-size: 1.5rem;
     border-radius: 15px;
 }
 select {
     border-style: solid;
     border-color: #00b9ff;
     background-color: #00b9ff;
-    font-size: 4vw;
+    font-size: 1rem;
     border-radius: 15px;
     display: block;
     width: 30vw;
@@ -52,15 +52,15 @@ select {
     padding-left: 2vw
 }
 .subtext {
-    font-size: 5vw;
+    font-size: 2rem;
     margin-top: 3vw;
     margin-bottom: 3vw;
 }
 .subsubtext{
-    font-size: 3vw;
+    font-size: 1.3rem;
 }
 .smalltext {
-    font-size: 2vw;
+    font-size: 2rem;
 }
 .subheader {
     text-shadow: 0px 0px 7px rgb(0 0 0 / 30%);
@@ -75,47 +75,47 @@ select {
     input {
         width: 70vw;
         height: 10vw;
-        font-size: 8vw
+        /* font-size: 1rem */
     }
-    button{
-        font-size: 8vw
+    /* button{
+        font-size: 1rem
     }
     select{
-        font-size: 3vw
+        font-size: 1rem
     }
     .subtext {
-        font-size: 9vw;
+        font-size: 1rem;
     }
     .smalltext {
-        font-size: 3vw;
+        font-size: 1rem;
     }
     .subsubtext{
-        font-size: 5vw;
+        font-size: 1rem;
     }
     .normalimage {
         width:6vw;
         height:6vw;
         margin-right: 2vw;
-    }
+    } */
 }
 @media (min-width: 1000px){
     input {
         width: 45vw;
         height: 5vw;
-        font-size: 4vw
+        /* font-size: 1rem */
     }
-    button {
-        font-size: 7vw
+    /* button {
+        font-size: 1rem
     }
     .subtext {
-        font-size: 4vw;
+        font-size: 1rem;
     }
     .smalltext {
-        font-size: 2vw;
+        font-size: 1rem;
     }
     .subsubtext{
-        font-size: 3vw;
-    }
+        font-size: 1rem;
+    } */
 }
 .hoverinput:hover{
     animation: hoverinputed 500ms forwards;

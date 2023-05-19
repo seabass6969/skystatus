@@ -42,7 +42,7 @@
     let finaldata = ""
     async function clickedlocation() {
         locationdata.loading = true;
-        const response = await fetch('https://skyproxyjs.cephas8080.workers.dev/api/status/' + playervalue)
+        const response = await fetch('https://skystatusback.onrender.com/api/status/' + playervalue)
         const output = await response.json()
         if(output.error == undefined){
         locationdata.success = true
