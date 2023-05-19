@@ -1,4 +1,5 @@
 <script>
+let clientWidth = 0
 let styleclass = "100vw"
 let w;
 let lv = [
@@ -50,6 +51,7 @@ let reallv = [
             styleclass = "90vw"
         }
         if(w >= 600){
+            styleclass = "50vw"
             // console.log("desktop")
         }
     }
@@ -97,9 +99,12 @@ let reallv = [
 .xp{
     position: relative;
     font-size: 1.2vw;
-    left: calc((100vw - 30px) / 2 - 13vw);
+    left: calc((40vw - 30px) / 2 - 13vw);
     right: auto;
     width:50vw 
+}
+.xpMo{
+    left: calc((90vw - 30px) / 2 - 13vw);
 }
 @media (max-width: 600px){
     .barObject{
@@ -139,6 +144,8 @@ let reallv = [
     }
 }
 </style>
+
+<svelte:window bind:innerWidth={clientWidth}/>
 <div class="bar" bind:clientWidth={w}>
 <p class="barText">{text} {roundup(xp)[1]}</p>
 <div class="barIMG">
@@ -147,7 +154,7 @@ let reallv = [
 <div class="barObject" style="width: calc({styleclass} - 30px);">
 
 <div class="barContent" style="width: calc(({styleclass} - 30px)*{roundup(xp)[0]} / 100);">
-<p class="xp">{roundup(xp)[2]} / {roundup(xp)[3]} XP</p>
+<p class="xp" class:xpMo={clientWidth <= 600}>{roundup(xp)[2]} / {roundup(xp)[3]} XP</p>
 </div>
 
 </div>

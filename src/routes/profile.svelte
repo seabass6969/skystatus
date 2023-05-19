@@ -26,6 +26,13 @@
     .showme {
         margin-right: 3vw;
     }
+    .selected {
+        margin-top: 3vw;
+        margin-left: 3vw;
+    }
+    .profiles {
+        margin-left: 3vw;
+    }
    </style>
 <svelte:head>
 <title>profile</title>
@@ -43,12 +50,15 @@ const init = {
 
     let playervalue = ""
     let selected_value = ""
-    let list_of_item 
+    let list_of_item
     let start_loading = false
     let finish_loaded = false 
     async function showprofile(){
+        finish_loaded = true
+        let x = (await fetch('https://skystatusback.onrender.com/api/profileslist/' + playervalue, init)).json()
+        list_of_item = (await x)
+        finish_loaded = false
         start_loading = true
-        list_of_item= await fetch('https://skystatusback.onrender.com/api/profileslist/' + playervalue, init)
     }
     function onchangevalue(){
 
@@ -62,7 +72,14 @@ const init = {
 <Thinking />
 {/if}
 {#if start_loading == true}
-    <a class="subsubtext" href="/profile/{playervalue}/{selected_value}" use:link>show the profile</a>
+    <select bind:value={selected_value} class="selected">
+    {#each list_of_item as a}
+        <option value={a["profile_id"]}>{a["cute_name"]}</option>
+    {/each}
+    </select>
+    {#if selected_value != ""}
+        <a class="subsubtext profiles" href="/profile/{playervalue}/{selected_value}" use:link>show the profile</a>
+    {/if}
 {/if}
 <br>
 <div class="back-bg"></div>
